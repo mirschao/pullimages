@@ -29,6 +29,6 @@ jobs:
       - name: Run a multi-line script
         run: |
           docker pull registry.k8s.io/metrics-server/metrics-server:v0.6.3
-          docker login --username=运维神经质 --password='Qfcloud120!!' registry.cn-beijing.aliyuncs.com
+          docker login --username={{ secret.USR }} --password={{ secret.PSW }} registry.cn-beijing.aliyuncs.com
           docker tag registry.k8s.io/metrics-server/metrics-server:v0.6.3 registry.cn-beijing.aliyuncs.com/metricserver/metrics-server:v0.6.3
           docker push registry.cn-beijing.aliyuncs.com/metricserver/metrics-server:v0.6.3
